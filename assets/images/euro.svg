@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42.666" height="23.3" viewBox="0 0 42.666 23.3">
+  <g id="Group_9" data-name="Group 9" transform="translate(-375 -45)">
+    <path id="Path_3" data-name="Path 3" d="M38.494,0H8.784A4.169,4.169,0,0,0,4.613,4.172V8.377L0,11.667l4.613,3.256v4.206A4.169,4.169,0,0,0,8.784,23.3h29.71a4.169,4.169,0,0,0,4.172-4.172V4.172A4.169,4.169,0,0,0,38.494,0Z" transform="translate(375 45)" fill="#29abe2"/>
+    <text id="EUR" transform="translate(386 62)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">EUR</tspan></text>
+  </g>
+</svg>
