@@ -372,6 +372,10 @@ ul {
     border-radius: 5px;
     padding: 0.5rem 1rem;
     color: white !important;
+
+    @media (max-width: 500px) {
+      padding: 0.3rem 0.8rem;
+    }
   }
 
   .dropdown {
@@ -463,6 +467,14 @@ ul {
       align-items: center;
       gap: 1rem;
 
+      .nav-login-btn {
+        display: block;
+
+        @media (max-width: 500px) {
+          display: none;
+        }
+      }
+
       a {
         color: #f7931e;
       }
@@ -502,6 +514,38 @@ ul {
 
     .mobile-navbar {
       display: none;
+
+      .login-btn-mobile {
+        text-align: center;
+        color: black;
+
+        cursor: pointer;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        font-family: inherit;
+        text-align: center;
+        outline: none;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgb(33, 40, 51);
+        border-radius: 4px;
+        padding: 10px 16px;
+        min-height: 24px;
+        border: none;
+        background-image: linear-gradient(
+          rgb(248, 209, 47) 0%,
+          rgb(240, 185, 11) 100%
+        );
+        font-weight: 400;
+        width: 90%;
+
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+      }
     }
     @media (max-width: 1280px) {
       .nav-left {
