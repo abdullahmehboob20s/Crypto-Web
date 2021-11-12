@@ -702,7 +702,7 @@ ul {
       justify-content: unset;
       align-items: unset;
       padding: 2rem 1.5rem;
-      padding-bottom: 4rem;
+      padding-bottom: 80px;
 
       .hero-right {
         margin-right: 0px;
@@ -754,7 +754,8 @@ ul {
 }
 @media (max-width: 500px) {
   .swiper-pagination {
-    left: 70% !important;
+    top: 843px;
+    left: 25px !important;
   }
 }
 
