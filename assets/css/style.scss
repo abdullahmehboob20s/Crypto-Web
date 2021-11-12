@@ -167,7 +167,7 @@ body {
 }
 
 .f30 {
-  font-size: clamp(22px, 1.7361111111111112vw, 30px);
+  font-size: clamp(18px, 1.7361111111111112vw, 30px);
 }
 
 .f35 {
@@ -180,7 +180,7 @@ body {
   line-height: 65px;
 }
 .f53 {
-  font-size: clamp(40px, 3.125vw, 53px);
+  font-size: clamp(30px, 3.125vw, 53px);
 }
 .f57 {
   font-size: clamp(30px, 2.4305555555555554vw, 57px);
@@ -192,7 +192,7 @@ body {
   line-height: 71px;
 }
 .f97 {
-  font-size: clamp(60px, 4.861111111111111vw, 97px);
+  font-size: clamp(50px, 4.861111111111111vw, 97px);
   line-height: unset;
 }
 
@@ -308,7 +308,7 @@ body {
   margin-bottom: 65px;
 }
 .mb-70px {
-  margin-bottom: 70px;
+  margin-bottom: clamp(40px, 4.861111111111111vw, 70px);
 }
 .mb-75px {
   margin-bottom: 75px;
@@ -348,12 +348,12 @@ ul {
 .section-title {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(20px, 2.2222222222222223vw, 32px);
 }
 
 .section-title::before {
   content: "";
-  width: 74.29px;
+  width: clamp(60px, 5.138888888888889vw, 74.29px);
   height: 6.96px;
   background-color: #707070;
   border-radius: 10px;
@@ -434,6 +434,12 @@ ul {
       .navbar-brand {
         width: 85px;
         margin-right: 1rem;
+      }
+
+      @media (max-width: 500px) {
+        .navbar-brand {
+          width: 65px;
+        }
       }
 
       .nav-links {
@@ -605,6 +611,13 @@ ul {
         transform: rotate(180deg);
       }
     }
+
+    @media (max-width: 400px) {
+      .mobile-navbar {
+        right: -300px;
+        width: 300px;
+      }
+    }
   }
 }
 // HEADER END
@@ -644,6 +657,7 @@ ul {
         color: transparent;
       }
     }
+
     .hero-right {
       max-width: 600px;
       // border: 2px solid red;
@@ -654,7 +668,8 @@ ul {
         gap: 1rem;
 
         button {
-          padding: 20px 40px;
+          padding: clamp(10px, 1.3888888888888888vw, 20px)
+            clamp(25px, 2.0833333333333335vw, 40px);
           background: #f7931e 0% 0% no-repeat padding-box;
           border: 2px solid #ffffff;
           border-radius: 49px;
@@ -666,20 +681,83 @@ ul {
       border-bottom: 2px solid #707070;
       padding-bottom: 1rem;
     }
+
+    @media (max-width: 760px) {
+      height: unset;
+      min-height: calc(100vh - 100px);
+
+      .hero-right {
+        margin-right: 50px;
+      }
+
+      .hero-btns {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero {
+      flex-direction: column;
+      justify-content: unset;
+      align-items: unset;
+      padding: 2rem 1.5rem;
+      padding-bottom: 4rem;
+
+      .hero-right {
+        margin-right: 0px;
+      }
+
+      .hero-left {
+        flex: unset;
+        min-width: unset;
+        height: unset;
+        position: static;
+
+        p {
+          position: static;
+          font-size: 40px;
+          transform: rotate(0) translate(0, 0);
+          transform-origin: unset;
+          -webkit-text-stroke-width: 1px;
+          opacity: 0.4;
+        }
+      }
+    }
   }
 }
 
 .swiper-pagination {
   position: absolute;
-  top: 107% !important;
+  bottom: -70px !important;
   width: auto !important;
   left: auto !important;
-  left: 12% !important;
+  left: 150px !important;
   margin: 0;
 
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 760px) {
+  .swiper-pagination {
+    position: absolute;
+    bottom: 20px !important;
+    width: auto !important;
+    left: auto !important;
+    left: 80% !important;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 500px) {
+  .swiper-pagination {
+    left: 70% !important;
+  }
+}
+
 .swiper-pagination-bullet {
   width: 15px;
   height: 15px;
@@ -802,6 +880,95 @@ ul {
   }
 }
 
+@media (max-width: 1300px) {
+  .product-detail-card {
+    min-width: unset !important;
+    max-width: unset !important;
+    width: unset !important;
+    flex: 1 !important;
+
+    padding: 0 !important;
+  }
+
+  .product-detail-card:nth-child(2) {
+    // flex: 1;
+    padding: 0 20px !important;
+  }
+  .product-detail-card:nth-child(3) {
+    padding: 0 20px !important;
+  }
+
+  .product-detail-card:nth-child(1) {
+    padding-right: 20px !important;
+  }
+
+  .product-detail-card:nth-child(4) {
+    padding-left: 20px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .product-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 0;
+  }
+
+  .product-detail-card:nth-child(1) {
+    padding-right: 40px !important;
+  }
+
+  .product-detail-card:nth-child(2) {
+    // flex: 1;
+    padding: 0 40px !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+    justify-content: center;
+  }
+  .product-detail-card:nth-child(3) {
+    padding: 0 40px !important;
+    padding-left: 0 !important;
+  }
+
+  .product-detail-card:nth-child(4) {
+    padding-left: 40px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem 0;
+  }
+
+  .product-detail-card {
+    // justify-content: unset !important;
+  }
+
+  .product-detail-card:nth-child(1) {
+    padding-right: 0px !important;
+    border: none !important;
+  }
+
+  .product-detail-card:nth-child(2) {
+    // flex: 1;
+    padding: 0 0px !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+    justify-content: center;
+  }
+  .product-detail-card:nth-child(3) {
+    padding: 0 0px !important;
+    padding-left: 0 !important;
+    border: none !important;
+  }
+
+  .product-detail-card:nth-child(4) {
+    padding-left: 0px !important;
+  }
+}
+
 .products-cards {
   display: flex;
   align-items: center;
@@ -850,15 +1017,20 @@ ul {
   background-position: center center;
 
   position: relative;
-}
 
-// PRODUCT DETAILS ENDS
-
-.partners-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+// PRODUCT DETAILS ENDS
+
+@media (max-width: 900px) {
+  .partners-wrapper {
+    height: fit-content !important;
+    padding: 1rem 0;
+  }
 }
 .brands-slider {
   $min-image-size: 20px;
@@ -872,7 +1044,7 @@ ul {
   margin: 0 auto;
   position: relative;
   display: flex;
-  // border: 2px solid red;
+  overflow: hidden;
 
   &:hover div {
     animation-play-state: paused;
@@ -885,21 +1057,6 @@ ul {
 
     justify-content: space-around;
 
-    // Debug: This is just to help see where the loop happens
-    // &:nth-of-type(1) {
-    //   &,
-    //   img {
-    //     border: 1px dashed red;
-    //   }
-    // }
-    // &:nth-of-type(2) {
-    //   &,
-    //   img {
-    //     border: 1px dashed blue;
-    //   }
-    // }
-
-    // You may need this if there are too few images for the banner width
     min-width: 100%;
   }
 
@@ -922,10 +1079,43 @@ ul {
     margin: 0 0.5vw;
   }
 
-  // @media (max-width: 900px) {
-  //   --image-size: #{$min-image-size};
-  //   --image-size: min(max(#{$min-image-size}, 10vw), #{$max-image-size});
-  // }
+  @media (max-width: 900px) {
+    --image-size: #{$min-image-size};
+    --image-size: min(max(#{$min-image-size}, 10vw), #{$max-image-size});
+  }
+
+  @media (max-width: 760px) {
+    .outer {
+      overflow: hidden;
+    }
+
+    img:nth-child(1) {
+      display: none;
+    }
+    img:nth-child(2) {
+      display: none;
+    }
+    img:nth-child(3) {
+      display: none;
+    }
+    img:nth-child(4) {
+      display: none;
+      background-color: red;
+      border: 2px solid red;
+    }
+    img:nth-child(5) {
+      display: none;
+    }
+    img:nth-child(6) {
+      display: none;
+    }
+
+    // img {
+    //   display: block;
+    //   min-width: 120px;
+    //   margin: 0 0.3vw;
+    // }
+  }
 }
 
 @keyframes marquee {
@@ -955,6 +1145,18 @@ ul {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .board-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .board-cards {
+    grid-template-columns: 1fr;
+  }
+}
 // board-cards ENDS
 
 // FOOTER STARTS
@@ -963,13 +1165,13 @@ ul {
     0% no-repeat padding-box;
 }
 .footer-community {
-  height: 171px;
-
-  padding: 3rem 58px;
+  padding: clamp(35px, 4.513888888888889vw, 65px)
+    clamp(35px, 4.027777777777778vw, 58px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  gap: 2rem;
+  flex-wrap: wrap;
   background: url(../images/community-bg.png);
   background-position: center center;
   background-size: cover;
@@ -1002,6 +1204,19 @@ ul {
       align-items: center;
       gap: 1rem;
     }
+  }
+}
+
+@media (max-width: 680px) {
+  .footer-contents {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-content {
+    justify-content: unset;
+    align-items: unset !important;
+    flex-direction: unset;
   }
 }
 // FOOTER ENDS
