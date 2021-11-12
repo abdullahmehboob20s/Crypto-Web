@@ -755,7 +755,8 @@ ul {
 @media (max-width: 500px) {
   .swiper-pagination {
     top: 843px;
-    left: 25px !important;
+    right: 25px;
+    left: unset !important;
   }
 }
 
